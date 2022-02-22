@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="suep.yao.bighusework.Dao.CityDao">
+    <insert id="insertCity" parameterType="suep.yao.bighusework.entity.City">
+        insert into city (name,first,second)
+        values (#{name},#{first},#{second});
+    </insert>
+    <delete id="deleteByName" parameterType="string">
+        delete
+        from city
+        where name=#{cityName};
+    </delete>
+    <select id="findAllCity" resultType="suep.yao.bighusework.entity.City">
+        select *
+        from city;
+    </select>
+</mapper>

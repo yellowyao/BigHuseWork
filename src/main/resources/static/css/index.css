@@ -1,0 +1,88 @@
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 1800px;
+}
+
+#app h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    width: 80%;
+    margin-bottom: 10px;
+    /* border: #000000 1px solid; */
+}
+
+.data button {
+    height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 30px;
+    padding: 0 20px;
+    line-height: 40px;
+    border-radius: 7px;
+    border: 1px black solid;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding-left: 30px;
+}
+
+span {
+    font-size: 25px;
+    color: black;
+}
+
+input {
+    height: 30px;
+    padding-left: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: black 2px solid;
+    border-radius: 5px;
+}
+
+button {
+    height: 30px;
+    line-height: 30px;
+}
+
+.add {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding-left: 30px;
+}
+
+.searchNear {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding-left: 30px;
+}
+
+.delete {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding-left: 30px;
+}
+
+#container {
+    /*地图(容器)显示大小*/
+    width: 80%;
+    height: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+}

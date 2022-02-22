@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Hello world!</title>
+
+		<!--引入Javascript API GL，参数说明参见下文-->
+		<script src="https://map.qq.com/api/gljs?v=1.exp&key=QPMBZ-NWY66-EFXS2-E7MQD-I5FTT-FIFTM"></script>
+		<!-- 引入样式 -->
+
+
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+
+
+		<script>
+		</script>
+	</head>
+	<!-- 页面载入后，调用init函数 -->
+
+	<body>
+		<div id="app">
+			<h1>城市信息管理</h1>
+			<div class="data">
+				<div>
+					<button v-on:click="index=1,city={}">查询城市</button>
+					<button v-on:click="index=2,city={}">添加城市</button>
+					<button v-on:click="index=3,city={},distance=''">查询城市周围城市</button>
+					<button v-on:click="index=4,city={}">删除城市</button>
+					<button v-on:click="initbutton()">展示全部城市</button>
+				</div>
+				<div v-if="index===1" class="search">
+					<span>城市名:</span>
+					<input type="text" v-model="city.name">
+					<button type="submit" v-on:click="search1()">提交</button>
+				</div>
+
+				<div v-else-if="index===2" class="add">
+					<span>城市名:</span>
+					<input type="text" v-model="city.name">
+					<span>经度:</span>
+					<input type="text" v-model="city.first">
+					<span>纬度:</span>
+					<input type="text" v-model="city.second">
+					<button type="submit" v-on:click="add1()">提交</button>
+				</div>
+				<div v-else-if="index===3" class="searchNear">
+					<span>城市名:</span>
+					<input type="text" v-model="city.name">
+					<span>距离该城市的距离(公里):</span>
+					<input type="text" v-model="distance">
+
+					<button type="submit" v-on:click="searchNear1()">提交</button>
+
+				</div>
+
+				<div v-else-if="index===4" class="delete">
+					<span>城市名:</span>
+					<input type="text" v-model="city.name">
+					<button type="submit" v-on:click="delete1()">删除</button>
+				</div>
+
+			</div>
+			<!-- 定义地图显示容器 -->
+			<div id="container"></div>
+		</div>
+
+		<script src="./js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios-0.18.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js"></script>
+	</body>
+
+</html>
